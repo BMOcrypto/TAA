@@ -1,0 +1,38 @@
+<!--
+  templateType: page
+  isAvailableForNewContent: true
+  label: Contact
+  screenshotPath: ../images/template-previews/contact.png
+-->
+{% extends "./layouts/base.html" %}
+
+{% block body %}
+{% dnd_area "dnd_area"
+  label="Contact section",
+  class="body-container body-container--contact"
+%}
+  {% dnd_section background_color="#0f172a" %}
+    {% dnd_column %}
+      {% dnd_row %}
+        {% dnd_module
+          path="@hubspot/rich_text",
+          html="<h1 style='color:#fff;text-align:center;'>Let's Talk</h1><p style='color:rgba(255,255,255,.75);text-align:center;max-width:560px;margin:0 auto;'>Book a free 30-minute CRM audit and see exactly where your pipeline is leaking revenue.</p>"
+        %}
+        {% end_dnd_module %}
+      {% end_dnd_row %}
+    {% end_dnd_column %}
+  {% end_dnd_section %}
+  {% dnd_section background_color="#ffffff" %}
+    {% dnd_column %}
+      {% dnd_row %}
+        {% dnd_module
+          path="@hubspot/form",
+          form={ "form_id": "" },
+          label="Contact Form"
+        %}
+        {% end_dnd_module %}
+      {% end_dnd_row %}
+    {% end_dnd_column %}
+  {% end_dnd_section %}
+{% end_dnd_area %}
+{% endblock body %}

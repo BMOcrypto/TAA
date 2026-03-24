@@ -1,0 +1,15 @@
+{% dnd_section
+  background_color="#ffffff",
+  class="multi-col-section"
+%}
+  {% dnd_column %}
+    {% dnd_row %}
+      {% dnd_module
+        path="@hubspot/rich_text",
+        html="<div class='multi-col-header'><span class='tag'>What We Do</span><h2>Everything your HubSpot needs to perform.</h2><p>Three core service tracks — pick one or combine them all.</p></div><div class='multi-col-grid'><div class='col-card'><div class='col-card-icon'>&#128640;</div><h3>CRM Buildout</h3><p>Full HubSpot setup from scratch or a complete restructure of your existing portal. Pipelines, properties, views, and integrations — done right.</p></div><div class='col-card'><div class='col-card-icon'>&#9881;</div><h3>Workflow Automation</h3><p>Lead routing, follow-up sequences, task creation, and deal movement — automated so your team focuses on closing, not clicking.</p></div><div class='col-card'><div class='col-card-icon'>&#128200;</div><h3>RevOps Data Cleansing</h3><p>Duplicate contacts, stale deals, and broken properties slow down your whole team. We scrub your database so your reports actually mean something.</p></div></div>",
+        label="Three Column Cards"
+      %}
+      {% end_dnd_module %}
+    {% end_dnd_row %}
+  {% end_dnd_column %}
+{% end_dnd_section %}

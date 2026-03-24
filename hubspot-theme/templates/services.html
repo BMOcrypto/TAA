@@ -1,0 +1,29 @@
+<!--
+  templateType: page
+  isAvailableForNewContent: true
+  label: Services
+  screenshotPath: ../images/template-previews/services.png
+-->
+{% extends "./layouts/base.html" %}
+
+{% block body %}
+{% dnd_area "dnd_area"
+  label="Services section",
+  class="body-container body-container--services"
+%}
+  {% dnd_section background_color="#0f172a" %}
+    {% dnd_column %}
+      {% dnd_row %}
+        {% dnd_module
+          path="@hubspot/rich_text",
+          html="<h1 style='color:#fff;text-align:center;'>Our Services</h1><p style='color:rgba(255,255,255,.75);text-align:center;max-width:600px;margin:0 auto;'>From CRM setup to full pipeline automation, we tailor every engagement to your business.</p>"
+        %}
+        {% end_dnd_module %}
+      {% end_dnd_row %}
+    {% end_dnd_column %}
+  {% end_dnd_section %}
+  {% include_dnd_partial path="../sections/multi-column-content.html" %}
+  {% include_dnd_partial path="../sections/multi-row-content.html" %}
+  {% include_dnd_partial path="../sections/call-to-action.html" %}
+{% end_dnd_area %}
+{% endblock body %}

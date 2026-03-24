@@ -1,0 +1,16 @@
+/* =============================================
+   Theme Overrides — HubSpot Module Resets
+   Apply after main.css
+   ============================================= */
+
+/* Normalize HubSpot-injected wrappers */
+.dnd-section { width: 100% !important; }
+.dnd-column  { padding: 0 !important; }
+
+/* Ensure hs_cos_wrapper doesn't add unexpected spacing */
+.hs_cos_wrapper { display: block; }
+
+/* Rich text defaults inside DnD modules */
+.hs-richtext h2 { margin-bottom: 16px; }
+.hs-richtext p  { color: var(--color-text-muted); }
+.hs-richtext a  { color: var(--color-accent); }

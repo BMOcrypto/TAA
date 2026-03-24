@@ -1,0 +1,8 @@
+{
+  "label": "The Automation Architects",
+  "preview_path": "./templates/home.html",
+  "screenshot_path": "./images/template-previews/home.png",
+  "enable_domain_stylesheets": false,
+  "hide_color_and_font_fields": false,
+  "version": 1
+}

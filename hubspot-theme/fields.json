@@ -1,0 +1,53 @@
+[
+  {
+    "id": "primary_font",
+    "name": "primary_font",
+    "label": "Primary Font",
+    "type": "font",
+    "default": {
+      "font": "Inter",
+      "font_set": "GOOGLE",
+      "size": 16,
+      "size_unit": "px",
+      "color": "#1e293b",
+      "bold": false,
+      "italic": false
+    }
+  },
+  {
+    "id": "heading_font",
+    "name": "heading_font",
+    "label": "Heading Font",
+    "type": "font",
+    "default": {
+      "font": "Inter",
+      "font_set": "GOOGLE",
+      "size": 40,
+      "size_unit": "px",
+      "color": "#0f172a",
+      "bold": true,
+      "italic": false
+    }
+  },
+  {
+    "id": "primary_color",
+    "name": "primary_color",
+    "label": "Brand Primary Color",
+    "type": "color",
+    "default": { "color": "#0f172a", "opacity": 100 }
+  },
+  {
+    "id": "accent_color",
+    "name": "accent_color",
+    "label": "Accent / CTA Color",
+    "type": "color",
+    "default": { "color": "#6366f1", "opacity": 100 }
+  },
+  {
+    "id": "background_color",
+    "name": "background_color",
+    "label": "Page Background",
+    "type": "color",
+    "default": { "color": "#ffffff", "opacity": 100 }
+  }
+]

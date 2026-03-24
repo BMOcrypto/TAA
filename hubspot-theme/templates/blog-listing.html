@@ -1,0 +1,31 @@
+<!--
+  templateType: blog_listing
+  isAvailableForNewContent: true
+  label: Blog Listing
+  screenshotPath: ../images/template-previews/blog-listing.png
+-->
+{% extends "./layouts/base.html" %}
+
+{% block body %}
+<div class="body-container body-container--blog">
+  <section style="padding: 64px 24px; background: #0f172a; text-align: center;">
+    <h1 style="color:#fff;">CRM Insights &amp; Automation Tips</h1>
+    <p style="color:rgba(255,255,255,.75);max-width:560px;margin:16px auto 0;">Actionable HubSpot strategies for service businesses ready to scale.</p>
+  </section>
+  <section style="padding: 64px 24px; max-width: 1200px; margin: 0 auto;">
+    {% for content in contents %}
+    <article style="border-bottom:1px solid #e2e8f0;padding:32px 0;display:grid;grid-template-columns:1fr 2fr;gap:32px;align-items:start;">
+      {% if content.featured_image %}
+      <img src="{{ content.featured_image }}" alt="{{ content.featured_image_alt_text }}" style="border-radius:8px;width:100%;object-fit:cover;aspect-ratio:16/9;">
+      {% endif %}
+      <div>
+        <p style="font-size:.8125rem;color:#6366f1;font-weight:600;text-transform:uppercase;letter-spacing:.04em;">{{ content.blog_post_author.display_name }} &mdash; {{ content.publish_date|datetimeformat("%B %d, %Y") }}</p>
+        <h2 style="font-size:1.375rem;margin:8px 0 12px;"><a href="{{ content.absolute_url }}">{{ content.name }}</a></h2>
+        <p>{{ content.post_summary }}</p>
+        <a href="{{ content.absolute_url }}" class="btn btn-outline" style="margin-top:8px;">Read More</a>
+      </div>
+    </article>
+    {% endfor %}
+  </section>
+</div>
+{% endblock body %}

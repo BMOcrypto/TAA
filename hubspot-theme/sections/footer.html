@@ -1,0 +1,15 @@
+{% dnd_section
+  background_color="#0f172a",
+  class="site-footer"
+%}
+  {% dnd_column %}
+    {% dnd_row %}
+      {% dnd_module
+        path="@hubspot/rich_text",
+        html="<div class='footer-inner'><div class='footer-brand'><div class='nav-logo' style='color:#fff;font-size:1.125rem;font-weight:800;'>The Automation <span style='color:#6366f1;'>Architects</span></div><p>HubSpot CRM optimization for service businesses. We fix, build, and automate so you can focus on growth.</p></div><div class='footer-nav'><h4>Services</h4><ul><li><a href='/services'>CRM Buildout</a></li><li><a href='/services'>Workflow Automation</a></li><li><a href='/services'>Data Cleansing</a></li></ul></div><div class='footer-nav'><h4>Company</h4><ul><li><a href='/about'>About</a></li><li><a href='/blog'>Blog</a></li><li><a href='/contact'>Contact</a></li></ul></div><div class='footer-nav'><h4>Connect</h4><ul><li><a href='https://linkedin.com' target='_blank'>LinkedIn</a></li><li><a href='https://hubspot.com' target='_blank'>HubSpot Partner</a></li></ul></div></div><div class='footer-bottom'><p style='margin:0;'>&copy; {{ year }} The Automation Architects. All rights reserved.</p><p style='margin:0;'>Indianapolis, IN</p></div>",
+        label="Footer"
+      %}
+      {% end_dnd_module %}
+    {% end_dnd_row %}
+  {% end_dnd_column %}
+{% end_dnd_section %}

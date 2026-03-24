@@ -1,0 +1,25 @@
+{% dnd_section
+  background_color="#0f172a",
+  class="hero-banner"
+%}
+  {% dnd_column offset=0, width=6 %}
+    {% dnd_row %}
+      {% dnd_module
+        path="@hubspot/rich_text",
+        html="<div class='hero-content'><span class='tag'>HubSpot CRM Experts</span><h1>Stop Losing Deals to a Broken CRM</h1><p>We configure, clean, and automate HubSpot so your service business converts more leads with less manual work.</p><div class='hero-actions'><a class='btn btn-primary' href='/contact'>Book a Free Audit</a><a class='btn btn-outline' href='/services' style='color:#fff;border-color:rgba(255,255,255,.4);'>See Our Services</a></div></div>",
+        label="Hero Content"
+      %}
+      {% end_dnd_module %}
+    {% end_dnd_row %}
+  {% end_dnd_column %}
+  {% dnd_column offset=6, width=6 %}
+    {% dnd_row %}
+      {% dnd_module
+        path="@hubspot/rich_text",
+        html="<div class='hero-visual'><div class='hero-stat-grid'><div class='hero-stat'><span class='hero-stat-number'>3x</span><span class='hero-stat-label'>Average Pipeline Growth</span></div><div class='hero-stat'><span class='hero-stat-number'>90%</span><span class='hero-stat-label'>Less Manual Data Entry</span></div><div class='hero-stat'><span class='hero-stat-number'>14d</span><span class='hero-stat-label'>Avg. Onboarding Time</span></div><div class='hero-stat'><span class='hero-stat-number'>100%</span><span class='hero-stat-label'>HubSpot Native</span></div></div></div>",
+        label="Hero Stats"
+      %}
+      {% end_dnd_module %}
+    {% end_dnd_row %}
+  {% end_dnd_column %}
+{% end_dnd_section %}

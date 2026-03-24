@@ -1,0 +1,28 @@
+<!--
+  templateType: page
+  isAvailableForNewContent: true
+  label: About
+  screenshotPath: ../images/template-previews/about.png
+-->
+{% extends "./layouts/base.html" %}
+
+{% block body %}
+{% dnd_area "dnd_area"
+  label="About section",
+  class="body-container body-container--about"
+%}
+  {% dnd_section background_color="#0f172a" %}
+    {% dnd_column %}
+      {% dnd_row %}
+        {% dnd_module
+          path="@hubspot/rich_text",
+          html="<h1 style='color:#fff;text-align:center;'>About The Automation Architects</h1><p style='color:rgba(255,255,255,.75);text-align:center;max-width:640px;margin:0 auto;'>We're a HubSpot CRM optimization consultancy built for small service businesses — construction, fabrication, security, and real estate.</p>"
+        %}
+        {% end_dnd_module %}
+      {% end_dnd_row %}
+    {% end_dnd_column %}
+  {% end_dnd_section %}
+  {% include_dnd_partial path="../sections/multi-column-content.html" %}
+  {% include_dnd_partial path="../sections/call-to-action.html" %}
+{% end_dnd_area %}
+{% endblock body %}

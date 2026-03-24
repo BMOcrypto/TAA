@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="{{ html_lang }}" {{ html_lang_dir }}>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ content.html_title }} | The Automation Architects</title>
+  <meta name="description" content="{{ content.meta_description }}">
+
+  {# Canonical & OG #}
+  <link rel="canonical" href="{{ content.canonical_url }}">
+  <meta property="og:title"       content="{{ content.html_title }}">
+  <meta property="og:description" content="{{ content.meta_description }}">
+  <meta property="og:image"       content="{{ get_asset_url('../images/og-image.png') }}">
+  <meta property="og:type"        content="website">
+
+  {# Favicon #}
+  <link rel="icon" type="image/png" href="{{ get_asset_url('../images/favicon.png') }}">
+
+  {# Google Fonts #}
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  {# Theme Stylesheets #}
+  {{ require_css(get_asset_url('../css/main.css')) }}
+  {{ require_css(get_asset_url('../css/theme-overrides.css')) }}
+
+  {# HubSpot Required Head #}
+  {{ standard_header_includes }}
+</head>
+<body class="{{ body_class }}">
+
+  {# Navigation #}
+  {% include_dnd_partial path="../sections/navigation.html" %}
+
+  {# Page Content #}
+  {% block body %}{% endblock body %}
+
+  {# Footer #}
+  {% include_dnd_partial path="../sections/footer.html" %}
+
+  {# HubSpot Required Footer #}
+  {{ standard_footer_includes }}
+
+</body>
+</html>

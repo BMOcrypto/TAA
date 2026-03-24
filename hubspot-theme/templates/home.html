@@ -1,0 +1,61 @@
+<!--
+  templateType: page
+  isAvailableForNewContent: true
+  label: Home
+  screenshotPath: ../images/template-previews/home.png
+-->
+{% extends "./layouts/base.html" %}
+
+{% block body %}
+
+{% dnd_area "dnd_area"
+  label="Main section",
+  class="body-container body-container--home"
+%}
+
+  {# Hero Banner #}
+  {% include_dnd_partial path="../sections/hero-banner.html" %}
+
+  {# Two column — image right #}
+  {% include_dnd_partial path="../sections/multi-row-content.html" %}
+
+  {# Two column — image left #}
+  {% dnd_section
+    background_color="#f8fafc",
+    vertical_alignment="MIDDLE"
+  %}
+    {% dnd_column offset=0, width=6 %}
+      {% dnd_row %}
+        {% dnd_module
+          path="@hubspot/linked_image",
+          img={
+            "alt": "The Automation Architects — CRM automation in action",
+            "loading": "lazy",
+            "max_height": 451,
+            "max_width": 605,
+            "size_type": "auto_custom_max",
+            "src": get_asset_url("../images/automation-visual.png")
+          }
+        %}
+        {% end_dnd_module %}
+      {% end_dnd_row %}
+    {% end_dnd_column %}
+    {% dnd_column offset=6, width=6 %}
+      {% dnd_row %}
+        {% dnd_module
+          path="@hubspot/rich_text",
+          html="<h2>Built for service businesses that want to grow smarter.</h2><p>We configure HubSpot to match the way your team actually works — so nothing falls through the cracks and every lead gets the follow-up it deserves.</p><a class='btn btn-primary' href='/contact'>Book a Free Audit</a>"
+        %}
+        {% end_dnd_module %}
+      {% end_dnd_row %}
+    {% end_dnd_column %}
+  {% end_dnd_section %}
+
+  {# Call to Action #}
+  {% include_dnd_partial path="../sections/call-to-action.html" %}
+
+  {# Three column image with text #}
+  {% include_dnd_partial path="../sections/multi-column-content.html" %}
+
+{% end_dnd_area %}
+{% endblock body %}
