@@ -1,0 +1,699 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* The Automation Architects Brand Colors */
+  /* Primary: #101d4f (Dark Navy) */
+  /* Secondary: #121b60 (Navy) */
+  /* Light: #eaeff5 (Light Gray/Blue) */
+  
+  /* Base Colors */
+  --background: #ffffff;
+  --foreground: #101d4f;
+  --card: #ffffff;
+  --card-foreground: #101d4f;
+  --popover: #ffffff;
+  --popover-foreground: #101d4f;
+  --primary: #101d4f;
+  --primary-foreground: #ffffff;
+  --secondary: #eaeff5;
+  --secondary-foreground: #101d4f;
+  --muted: #eaeff5;
+  --muted-foreground: #4a5568;
+  --accent: #121b60;
+  --accent-foreground: #ffffff;
+  --destructive: #dc2626;
+  --destructive-foreground: #ffffff;
+  --border: #d1d9e6;
+  --input: #d1d9e6;
+  --ring: #121b60;
+  --radius: 0.5rem;
+  --font-sans: "Inter", "Inter Fallback";
+  --font-serif: "Montserrat", "Montserrat Fallback";
+  --font-mono: "JetBrains Mono", monospace;
+  --shadow-x: 0px;
+  --shadow-y: 1px;
+  --shadow-blur: 2px;
+  --shadow-spread: 0px;
+  --shadow-opacity: 0.08;
+  --shadow-color: #101d4f;
+
+  /* Chart Colors */
+  --chart-1: #101d4f;
+  --chart-2: #121b60;
+  --chart-3: #2d4a8c;
+  --chart-4: #4a6eb5;
+  --chart-5: #6b8fd4;
+
+  /* Sidebar Colors */
+  --sidebar: #ffffff;
+  --sidebar-foreground: #101d4f;
+  --sidebar-primary: #101d4f;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #eaeff5;
+  --sidebar-accent-foreground: #101d4f;
+  --sidebar-border: #d1d9e6;
+  --sidebar-ring: #121b60;
+}
+
+.dark {
+  /* Dark Mode - TAA Brand Colors */
+  --background: #0a1228;
+  --foreground: #eaeff5;
+  --card: #101d4f;
+  --card-foreground: #eaeff5;
+  --popover: #101d4f;
+  --popover-foreground: #eaeff5;
+  --primary: #4a6eb5;
+  --primary-foreground: #ffffff;
+  --secondary: #1e2d5a;
+  --secondary-foreground: #eaeff5;
+  --muted: #1e2d5a;
+  --muted-foreground: #a0aec0;
+  --accent: #2d4a8c;
+  --accent-foreground: #ffffff;
+  --destructive: #ef4444;
+  --destructive-foreground: #ffffff;
+  --border: #2d4a8c;
+  --input: #2d4a8c;
+  --ring: #4a6eb5;
+
+  /* Dark Chart Colors */
+  --chart-1: #4a6eb5;
+  --chart-2: #6b8fd4;
+  --chart-3: #8baae8;
+  --chart-4: #a8c4f5;
+  --chart-5: #c5deff;
+
+  /* Dark Sidebar Colors */
+  --sidebar: #0a1228;
+  --sidebar-foreground: #eaeff5;
+  --sidebar-primary: #4a6eb5;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #1e2d5a;
+  --sidebar-accent-foreground: #eaeff5;
+  --sidebar-border: #2d4a8c;
+  --sidebar-ring: #4a6eb5;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+
+  /* The Automation Architects Brand Color Variables */
+  --brand-navy-dark: #101d4f;
+  --brand-navy: #121b60;
+  --brand-light: #eaeff5;
+  --brand-navy-mid: #2d4a8c;
+  --brand-navy-light: #4a6eb5;
+  --brand-gray: #6c757d;
+
+  /* Status Color Variables */
+  --success: #22c55e;
+  --success-foreground: #f0fdf4;
+  --warning: #f59e0b;
+  --warning-foreground: #fffbeb;
+  --info: #3b82f6;
+  --info-foreground: #eff6ff;
+
+  /* Interactive Color Variables */
+  --hover: #f3f4f6;
+  --active: #e5e7eb;
+  --focus: #3b82f6;
+  --focus-ring: rgba(59, 130, 246, 0.2);
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --font-sans: "Open Sans", "Open Sans Fallback";
+  --font-serif: "Montserrat", "Montserrat Fallback";
+  --font-mono: "Open Sans", "Open Sans Fallback";
+  /* computed shadow variables below - do not modify */
+  --shadow-2xs: var(--shadow-x) var(--shadow-y)
+    color-mix(in srgb, var(--shadow-color) calc(var(--shadow-opacity) * 100%), transparent);
+  --shadow-xs: var(--shadow-x) var(--shadow-y) var(--shadow-blur) var(--shadow-spread)
+    color-mix(in srgb, var(--shadow-color) calc(var(--shadow-opacity) * 100%), transparent);
+  --shadow-sm: var(--shadow-x) var(--shadow-y) calc(var(--shadow-blur) * 1.5) var(--shadow-spread)
+    color-mix(in srgb, var(--shadow-color) calc(var(--shadow-opacity) * 100%), transparent);
+  --shadow-md: calc(var(--shadow-x) * 2) calc(var(--shadow-y) * 2) calc(var(--shadow-blur) * 3)
+    calc(var(--shadow-spread) - 1px)
+    color-mix(in srgb, var(--shadow-color) calc(var(--shadow-opacity) * 100%), transparent);
+  --shadow-lg: calc(var(--shadow-x) * 4) calc(var(--shadow-y) * 4) calc(var(--shadow-blur) * 5)
+    calc(var(--shadow-spread) - 3px)
+    color-mix(in srgb, var(--shadow-color) calc(var(--shadow-opacity) * 100%), transparent);
+  --shadow-xl: calc(var(--shadow-x) * 6) calc(var(--shadow-y) * 6) calc(var(--shadow-blur) * 7)
+    calc(var(--shadow-spread) - 5px)
+    color-mix(in srgb, var(--shadow-color) calc(var(--shadow-opacity) * 100%), transparent);
+  --shadow-2xl: calc(var(--shadow-x) * 8) calc(var(--shadow-y) * 8) calc(max(0px, var(--shadow-blur) * 9 - 8px))
+    calc(var(--shadow-spread) - 12px)
+    color-mix(in srgb, var(--shadow-color) calc(var(--shadow-opacity) * 250%), transparent);
+  --shadow: var(--shadow-md);
+  --color-shadow-color: var(--shadow-color);
+  --shadow-opacity: var(--shadow-opacity);
+  --shadow-spread: var(--shadow-spread);
+  --shadow-blur: var(--shadow-blur);
+  --shadow-y: var(--shadow-y);
+  --shadow-x: var(--shadow-x);
+}
+
+@theme {
+  /* Border Radius */
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+
+  /* Light Mode Colors */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  /* Chart Colors */
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+
+  /* Sidebar Colors */
+  --color-sidebar-background: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@theme dark {
+  /* Dark Mode Colors */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  /* Dark Mode Chart Colors */
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+
+  /* Dark Mode Sidebar Colors */
+  --color-sidebar-background: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply text-foreground;
+  }
+
+  a {
+    @apply text-foreground hover:text-foreground/80 transition-colors;
+  }
+}
+
+@layer components {
+  /* The Automation Architects Brand Component Styles */
+  .brand-gradient {
+    background: linear-gradient(135deg, #101d4f 0%, #121b60 50%, #2d4a8c 100%);
+  }
+
+  .brand-gradient-text {
+    background: linear-gradient(135deg, #101d4f 0%, #2d4a8c 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .glass-effect {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .dark .glass-effect {
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  /* Enhanced button styles - TAA Brand */
+  .btn-primary {
+    background-color: var(--brand-navy-dark);
+    color: #ffffff;
+    border: none;
+    padding: 12px 24px;
+    border-radius: var(--radius);
+    font-weight: 600;
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+  }
+
+  .btn-primary:hover {
+    background-color: var(--brand-navy);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(16, 29, 79, 0.3);
+  }
+
+  .btn-secondary {
+    background-color: transparent;
+    color: var(--brand-navy-dark);
+    border: 2px solid var(--brand-navy-dark);
+    padding: 10px 22px;
+    border-radius: var(--radius);
+    font-weight: 600;
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+  }
+
+  .btn-secondary:hover {
+    background-color: var(--brand-navy-dark);
+    color: #ffffff;
+    transform: translateY(-1px);
+  }
+
+  /* Form styles */
+  .form-input {
+    background-color: var(--background);
+    border: 2px solid var(--border);
+    color: var(--foreground);
+    padding: 12px 16px;
+    border-radius: var(--radius);
+    font-size: 16px;
+    transition: all 0.2s ease-in-out;
+    width: 100%;
+  }
+
+  .form-input:focus {
+    border-color: var(--brand-navy-light);
+    box-shadow: 0 0 0 3px rgba(16, 29, 79, 0.15);
+    outline: none;
+  }
+
+  .form-input:invalid {
+    border-color: var(--destructive);
+  }
+
+  /* Card styles */
+  .card-hover {
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+  }
+
+  .card-hover:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+  }
+
+  .dark .card-hover:hover {
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+  }
+
+  /* Navigation styles */
+  .nav-link {
+    color: var(--foreground);
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: var(--radius-sm);
+    transition: all 0.2s ease-in-out;
+    position: relative;
+  }
+
+  .nav-link:hover {
+    background-color: var(--hover);
+    color: var(--brand-navy);
+  }
+
+  .nav-link.active {
+    color: var(--brand-navy);
+    background-color: var(--brand-light);
+  }
+
+  .nav-link.active::after {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 20px;
+    height: 2px;
+    background-color: var(--brand-navy);
+    border-radius: 1px;
+  }
+
+  /* Status indicators */
+  .status-success {
+    background-color: var(--success-foreground);
+    color: var(--success);
+    border: 1px solid var(--success);
+  }
+
+  .status-warning {
+    background-color: var(--warning-foreground);
+    color: var(--warning);
+    border: 1px solid var(--warning);
+  }
+
+  .status-error {
+    background-color: var(--destructive-foreground);
+    color: var(--destructive);
+    border: 1px solid var(--destructive);
+  }
+
+  .status-info {
+    background-color: var(--info-foreground);
+    color: var(--info);
+    border: 1px solid var(--info);
+  }
+
+  /* Loading states */
+  .loading-spinner {
+    border: 2px solid var(--muted);
+    border-top: 2px solid var(--brand-orange);
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    animation: spin 1s linear infinite;
+  }
+
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  /* Responsive utilities */
+  .container-responsive {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 16px;
+  }
+
+  @media (min-width: 640px) {
+    .container-responsive {
+      padding: 0 24px;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .container-responsive {
+      padding: 0 32px;
+    }
+  }
+}
+
+@layer utilities {
+  /* Text utilities - TAA Brand */
+  .text-gradient {
+    background: linear-gradient(135deg, #101d4f 0%, #2d4a8c 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Animation utilities */
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-in-out;
+  }
+
+  .animate-slide-up {
+    animation: slideUp 0.5s ease-out;
+  }
+
+  .animate-scale-in {
+    animation: scaleIn 0.3s ease-out;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes scaleIn {
+    from {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  /* Spacing utilities */
+  .space-y-responsive > * + * {
+    margin-top: 1rem;
+  }
+
+  @media (min-width: 768px) {
+    .space-y-responsive > * + * {
+      margin-top: 1.5rem;
+    }
+  }
+
+  /* Border utilities */
+  .border-gradient {
+    border: 2px solid transparent;
+    background: linear-gradient(var(--background), var(--background)) padding-box,
+      linear-gradient(135deg, #ff6b35, #004e89) border-box;
+  }
+
+  /* Shadow utilities - TAA Brand */
+  .shadow-brand {
+    box-shadow: 0 4px 12px rgba(16, 29, 79, 0.12);
+  }
+
+  .shadow-brand-lg {
+    box-shadow: 0 8px 24px rgba(16, 29, 79, 0.18);
+  }
+
+  .dark .shadow-brand {
+    box-shadow: 0 4px 12px rgba(74, 110, 181, 0.25);
+  }
+
+  .dark .shadow-brand-lg {
+    box-shadow: 0 8px 24px rgba(74, 110, 181, 0.35);
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* Print styles */
+@media print {
+  * {
+    background: #ffffff !important;
+    color: #000000 !important;
+    box-shadow: none !important;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+
+  a[href]:after {
+    content: " (" attr(href) ")";
+  }
+
+  abbr[title]:after {
+    content: " (" attr(title) ")";
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  :root {
+    --border: #000000;
+    --ring: #000000;
+  }
+
+  .dark {
+    --border: #ffffff;
+    --ring: #ffffff;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Custom properties for dynamic theming */
+.theme-orange {
+  --brand-primary: #ff6b35;
+  --brand-secondary: #ff8c5a;
+}
+
+.theme-blue {
+  --brand-primary: #004e89;
+  --brand-secondary: #1a8cff;
+}
+
+.theme-green {
+  --brand-primary: #22c55e;
+  --brand-secondary: #34d399;
+}
+
+/* Component-specific overrides */
+.admin-dashboard {
+  --sidebar-width: 280px;
+  --header-height: 64px;
+}
+
+.mobile-menu {
+  background-color: var(--background);
+  border: 1px solid var(--border);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+.dark .mobile-menu {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+/* Form validation styles */
+.field-error {
+  border-color: var(--destructive) !important;
+  box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.1) !important;
+}
+
+.field-success {
+  border-color: var(--success) !important;
+  box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.1) !important;
+}
+
+/* Toast notification styles */
+.toast-success {
+  background-color: var(--success-foreground);
+  border-left: 4px solid var(--success);
+  color: var(--success);
+}
+
+.toast-error {
+  background-color: var(--destructive-foreground);
+  border-left: 4px solid var(--destructive);
+  color: var(--destructive);
+}
+
+.toast-warning {
+  background-color: var(--warning-foreground);
+  border-left: 4px solid var(--warning);
+  color: var(--warning);
+}
+
+.toast-info {
+  background-color: var(--info-foreground);
+  border-left: 4px solid var(--info);
+  color: var(--info);
+}
